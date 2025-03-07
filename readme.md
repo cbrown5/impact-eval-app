@@ -8,7 +8,7 @@ Impact is defined as the mean difference between survey sites inside the no-take
 
 The true impact measure accounts for the biased placement of the no-take zones. The user will be selecting N monitoring sites across a grid. Different grid cells have different underlying habitats. So the challenge for the user is to select sites that are representative of the habitat distribution inside the no-take zones. 
 
-The language to use is java script. I intend to deploy this as a github pages page. It will then be easy for students to use it in class. 
+The language is java script. I intend to deploy this as a github pages page. It will then be easy for students to use it in class. 
 
 The app presents a grid where each cell has a specific combination of three possible habitats (see image). There is also a gradient of fishing pressure from a port located to the left of the spatial domain. Some grid cells are protected, whereas others are fished. The fish biomass in a grid cell is calculated internally based on a simple additive formula. In each grid cell fish biomass is modelled: 
 
@@ -21,4 +21,4 @@ The user will be able to select N monitoring sites. The app will then calculate 
 
 (a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F + d*N) + -1*(a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F) 
 
-I want the app to look like the attached image. The user should be able to click on grids to 'select' them as potential survey sites. Once selected they should change colour so its clear they are selected. There should then be a 'calculate' button that calculates the survey and true impact measures. I have provided the image logos for the three habitats in the assets folder. There should also be 'reset' button that clears the selected sites. Finally there should be a 'new scenario' button that randomises the no-take zones and the fish habitat distributions.
+The app is designed to look like the screenshot in assets. The user can click on grids to 'select' them as potential survey sites. Once selected they change colour so its clear they are selected. There is then a 'calculate' button that calculates the survey and true impact measures. I have provided the image logos for the three habitats in the assets folder. There should also be 'reset' button that clears the selected sites. Finally there should be a 'new scenario' button that randomises the no-take zones and the fish habitat distributions.
