@@ -43,12 +43,14 @@ The Marine Reserve Impact Evaluation App has been successfully implemented with 
 
 ### Short-term Tasks
 - [x] Complete memory bank documentation
+- [x] Add fishing village image to the left side
+- [x] Remove fishing gradient from the legend
 - [ ] Conduct thorough testing across different browsers
 - [ ] Gather user feedback on the interface and functionality
 - [ ] Create a simple user guide or tutorial
 
 ### Medium-term Improvements
-- [ ] Add visual indicators for fishing pressure gradient
+- [x] Add visual indicators for fishing pressure (fishing village image)
 - [ ] Implement local storage for saving scenarios
 - [ ] Enhance accessibility features
 - [ ] Add optional visualization of biomass distribution across the grid

@@ -40,7 +40,7 @@ The Marine Reserve Impact Evaluation App has reached its Minimum Viable Product 
 ## What's Left to Build
 
 ### Additional Features
-- ⬜ Visual representation of fishing pressure gradient
+- ✅ Visual representation of fishing pressure (fishing village image)
 - ⬜ Ability to save/load scenarios
 - ⬜ Tutorial or guided walkthrough for first-time users
 - ⬜ Additional visualizations (e.g., charts, heatmaps)
@@ -60,7 +60,6 @@ The Marine Reserve Impact Evaluation App has reached its Minimum Viable Product 
 1. **Habitat Icons**: Some habitat icons may not be clearly visible on certain screen sizes or resolutions
 2. **Selection Limit**: No visual indication when maximum selection limit is reached (only alert message)
 3. **Mobile Experience**: Interface is functional but not optimized for very small screens
-4. **Fishing Pressure**: No visual indication of the fishing pressure gradient
 
 ### Technical Issues
 1. **Site Count Input**: Changing the site count doesn't immediately update the selection counter until a new scenario is generated
@@ -94,7 +93,6 @@ The application is ready for deployment to GitHub Pages. It consists of static H
 
 1. **Browser Testing**: Ensure compatibility across major browsers
 2. **Documentation**: Create user guide or tutorial
-3. **Visual Enhancements**: Add visual representation of fishing pressure gradient
 4. **Feedback Collection**: Gather user feedback for future improvements
 5. **Accessibility**: Improve keyboard navigation and screen reader support
 
@@ -102,6 +100,7 @@ The application is ready for deployment to GitHub Pages. It consists of static H
 
 - **2025-03-07**: Initial implementation completed
 - **2025-03-07**: Memory bank documentation created
+- **2025-03-07**: Added fishing village image and removed fishing gradient from legend
 - **Next**: Testing and refinement
 - **Future**: Additional features and improvements based on feedback
 

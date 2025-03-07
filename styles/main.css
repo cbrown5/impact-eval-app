@@ -99,6 +99,20 @@ button:hover {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.fishing-village-container {
+    position: absolute;
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.fishing-village-image {
+    width: 70px;
+    height: auto;
 }
 
 #grid {
@@ -197,22 +211,6 @@ button:hover {
     border: 1px solid gold;
 }
 
-.legend-arrow {
-    width: 40px;
-    height: 20px;
-    background: linear-gradient(to right, #e74c3c, #3498db);
-    position: relative;
-}
-
-.legend-arrow:after {
-    content: '';
-    position: absolute;
-    right: -10px;
-    top: 5px;
-    border-left: 10px solid #3498db;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-}
 
 .results-panel {
     background-color: #f5f5f5;
@@ -277,5 +275,15 @@ footer {
     .legend {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .fishing-village-container {
+        position: static;
+        margin-bottom: 10px;
+        transform: none;
+    }
+    
+    .fishing-village-image {
+        width: 50px;
     }
 }
