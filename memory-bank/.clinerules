@@ -1,0 +1,107 @@
+# Cline Rules: Marine Reserve Impact Evaluation App
+
+## Project Patterns & Preferences
+
+### Code Organization
+- JavaScript files are organized by functionality (config, utils, calculations, grid, app)
+- Each file has a specific responsibility and should maintain separation of concerns
+- Configuration parameters are centralized in the CONFIG object
+- Grid state is managed by the GridState object
+
+### Naming Conventions
+- Constants are in UPPER_CASE
+- Functions and variables use camelCase
+- Object properties use camelCase
+- CSS classes use kebab-case
+
+### Code Style
+- Use descriptive variable and function names
+- Include JSDoc comments for functions
+- Group related functionality together
+- Prefer const over let when variables won't be reassigned
+- Use arrow functions for callbacks and event handlers
+- Avoid global variables outside of defined objects
+
+### DOM Manipulation
+- Create elements programmatically rather than using innerHTML
+- Use event delegation where appropriate
+- Update the DOM efficiently (minimize reflows)
+- Provide visual feedback for user interactions
+
+### State Management
+- Grid state is centralized in the GridState object
+- UI state (like selection counter) is derived from the grid state
+- State updates should trigger appropriate UI updates
+- Avoid redundant state that could get out of sync
+
+### Calculation Logic
+- Keep calculation functions pure when possible
+- Separate calculation logic from UI logic
+- Use clear, step-by-step calculations for maintainability
+- Document the mathematical approach in comments
+
+### User Interface
+- Provide clear visual distinction between different cell types
+- Use consistent colors and styling
+- Ensure interactive elements are obvious
+- Provide immediate feedback for user actions
+- Keep the interface clean and focused on the task
+
+### Configuration
+- All adjustable parameters should be in the CONFIG object
+- Document the purpose and effect of each configuration parameter
+- Use sensible defaults that create a good learning experience
+- Keep the configuration format consistent
+
+## Project Intelligence
+
+### Critical Implementation Paths
+- Grid generation with random habitat distribution and no-take zones
+- Site selection and visual feedback
+- Impact calculation based on selected sites
+- Results display with survey-based and true impact
+
+### Known Challenges
+- Balancing randomness with educational value in scenario generation
+- Ensuring habitat icons are visible and distinguishable
+- Making the impact calculation transparent and understandable
+- Providing an intuitive interface while conveying complex concepts
+
+### Evolution of Project Decisions
+- Started with a basic grid implementation
+- Added habitat icons and no-take zone visualization
+- Implemented site selection with visual feedback
+- Added impact calculation and results display
+- Refined the UI and fixed issues with habitat display and site count input
+
+### Tool Usage Patterns
+- Use browser developer tools for debugging and testing
+- Test in multiple browsers to ensure compatibility
+- Use version control to track changes
+- Document code with comments and JSDoc
+
+## Future Development Guidelines
+
+### Adding Features
+- Maintain the educational focus of the application
+- Keep the interface intuitive and uncluttered
+- Document new features in the memory bank
+- Update configuration parameters as needed
+
+### Refactoring
+- Maintain separation of concerns
+- Keep the modular structure
+- Update documentation to reflect changes
+- Ensure backward compatibility with existing functionality
+
+### Testing
+- Test across different browsers
+- Verify calculations with known examples
+- Check edge cases (e.g., no selections, all cells selected)
+- Ensure responsive design works on different screen sizes
+
+### Documentation
+- Update memory bank files when making significant changes
+- Document configuration parameters and their effects
+- Provide clear comments for complex logic
+- Keep the README up to date with usage instructions
