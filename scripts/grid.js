@@ -45,7 +45,6 @@ const GridState = {
                     id: `cell-${x}-${y}`,
                     H1: randomBoolean(CONFIG.HABITAT_PROBABILITY.H1),
                     H2: randomBoolean(CONFIG.HABITAT_PROBABILITY.H2),
-                    H3: randomBoolean(CONFIG.HABITAT_PROBABILITY.H3),
                     fishingPressure,
                     isNoTake,
                     isSelected: false
@@ -115,16 +114,6 @@ const GridState = {
                 icon.src = CONFIG.ASSETS.CORAL2;
                 icon.className = 'habitat-icon';
                 icon.alt = 'Coral 2';
-                icon.width = 16;
-                icon.height = 16;
-                habitatIconsContainer.appendChild(icon);
-            }
-            
-            if (cell.H3) {
-                const icon = new Image();
-                icon.src = CONFIG.ASSETS.SEAGRASS;
-                icon.className = 'habitat-icon';
-                icon.alt = 'Seagrass';
                 icon.width = 16;
                 icon.height = 16;
                 habitatIconsContainer.appendChild(icon);

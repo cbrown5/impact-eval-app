@@ -5,29 +5,25 @@
 
 /**
  * Calculate biomass for a grid cell based on habitat, fishing pressure, and protection status
- * B = a1*H1 + a2*H2 + a3*H3 + b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F + d*N
+ * B = a1*H1 + a2*H2 + b1*H1*H2 + c*F + d*N
  * 
  * @param {Object} cell - Grid cell data
  * @returns {number} Calculated biomass value
  */
 function calculateBiomass(cell) {
-    const { H1, H2, H3, fishingPressure, isNoTake } = cell;
-    const { a1, a2, a3, b1, b2, b3, c, d } = CONFIG.COEFFICIENTS;
+    const { H1, H2, fishingPressure, isNoTake } = cell;
+    const { a1, a2, b1, c, d } = CONFIG.COEFFICIENTS;
     
     // Convert boolean to 0/1
     const h1Value = H1 ? 1 : 0;
     const h2Value = H2 ? 1 : 0;
-    const h3Value = H3 ? 1 : 0;
     const noTakeValue = isNoTake ? 1 : 0;
     
     // Calculate biomass using the formula
     const biomass = 
         a1 * h1Value + 
-        a2 * h2Value + 
-        a3 * h3Value +
+        a2 * h2Value +
         b1 * h1Value * h2Value +
-        b2 * h2Value * h3Value +
-        b3 * h1Value * h3Value +
         c * fishingPressure +
         d * noTakeValue;
     
