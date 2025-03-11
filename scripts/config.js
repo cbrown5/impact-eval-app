@@ -5,21 +5,21 @@
 
 const CONFIG = {
     // Grid settings
-    GRID_SIZE: 5,
+    GRID_SIZE: 6,
     DEFAULT_SURVEY_SITES: 6,
     
     // Biomass calculation coefficients
     COEFFICIENTS: {
         // Habitat effects
-        a1: 0.5,  // H1 effect (coral1)
-        a2: 0.3,  // H2 effect (coral2)
+        a1: 50,  // H1 effect (coral1)
+        a2: 30,  // H2 effect (coral2)
         
         // Interaction effects
-        b1: 0.2,  // H1*H2 interaction (coral1 * coral2)
+        b1: 20,  // H1*H2 interaction (coral1 * coral2)
         
         // Management effects
-        c: -0.3,  // Fishing pressure effect (negative impact)
-        d: 0.4    // No-take zone effect (positive impact)
+        c: -10,  // Fishing pressure effect (negative impact)
+        d: 40    // No-take zone effect (positive impact)
     },
     
     // Probability settings

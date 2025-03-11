@@ -2,6 +2,19 @@
 
 CJ Brown 2025-03-07
 
+TODO
+Make the MPA all have teh same coral habitat. 
+
+Go for a high difference
+Go for a low difference
+Balance the difference
+Need to be representative of:
+fishing gradient
+habitat distribution
+habitat disribution inside the proected area
+
+
+
 This web app allows users to explore how monitoring design affects the reliability of impact measures. Specifically, the user will be designing a program of diver surveys to count fish biomass. They want to know the impact of no-take marine reserves on fish biomass. They need to make choices about where to survey to get an accurate measure of the impact. They are then presented with a final result of the impact measure from their surveys versus the true impact value.
 
 Impact is defined as the mean difference between survey sites inside the no-take zones versus outside the no-take zones. 
