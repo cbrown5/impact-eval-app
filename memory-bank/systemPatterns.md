@@ -115,6 +115,17 @@ Biomass and impact calculations are isolated in their own module, making it easi
 - Modify calculation formulas if needed
 - Reuse calculation logic in different contexts
 
+The biomass calculation uses a multiplicative formula for the no-take zone effect:
+```javascript
+// Base biomass (without protection effect)
+const baseBiomass = a1*H1 + a2*H2 + b1*H1*H2 + c*F;
+
+// Final biomass with multiplicative no-take effect
+const biomass = baseBiomass * d * noTakeValue + baseBiomass;
+```
+
+The true impact is calculated using the mean of counterfactual impacts across all cells, which provides a more accurate measure than simply comparing mean biomass between protected and unprotected areas.
+
 ## State Management
 
 The application maintains several key state elements:

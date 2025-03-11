@@ -30,8 +30,8 @@ const CONFIG = {
     
     // No-take zone settings
     NO_TAKE_ZONE: {
-        COVERAGE: 0.01,  // Percentage of grid cells that are no-take zones
-        BIAS_STRENGTH: 0.7  // How strongly no-take zones are biased towards low fishing pressure (0-1)
+        COVERAGE: 0.05,  // Percentage of grid cells that are no-take zones
+        BIAS_STRENGTH: 0.2  // How strongly no-take zones are biased towards low fishing pressure (0-1)
     },
     
     // Asset paths

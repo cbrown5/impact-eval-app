@@ -5,7 +5,7 @@
 
 /**
  * Calculate biomass for a grid cell based on habitat, fishing pressure, and protection status
- * B = a1*H1 + a2*H2 + b1*H1*H2 + c*F + d*N
+ * B = (a1*H1 + a2*H2 + b1*H1*H2 + c*F) * d*N + (a1*H1 + a2*H2 + b1*H1*H2 + c*F)
  * 
  * @param {Object} cell - Grid cell data
  * @returns {number} Calculated biomass value
@@ -19,13 +19,15 @@ function calculateBiomass(cell) {
     const h2Value = H2 ? 1 : 0;
     const noTakeValue = isNoTake ? 1 : 0;
     
-    // Calculate biomass using the formula
-    const biomass = 
+    // Calculate base biomass (without protection effect)
+    const baseBiomass = 
         a1 * h1Value + 
         a2 * h2Value +
         b1 * h1Value * h2Value +
-        c * fishingPressure +
-        d * noTakeValue;
+        c * fishingPressure;
+    
+    // Calculate biomass using the new multiplicative formula
+    const biomass = baseBiomass * d * noTakeValue + baseBiomass;
     
     return biomass;
 }
@@ -60,30 +62,25 @@ function calculateSurveyImpact(selectedCells) {
 
 /**
  * Calculate the true impact measure across all grid cells
- * This accounts for the biased placement of no-take zones
+ * This uses the mean of counterfactual impacts to account for the biased placement of no-take zones
  * 
  * @param {Array} allCells - Array of all grid cells
  * @returns {number} True impact measure
  */
 function calculateTrueImpact(allCells) {
-    // Separate all cells into no-take and fished groups
-    const noTakeCells = allCells.filter(cell => cell.isNoTake);
-    const fishedCells = allCells.filter(cell => !cell.isNoTake);
+    // Calculate counterfactual impact for each cell
+    const impacts = allCells.map(cell => calculateCounterfactualImpact(cell));
     
-    // If either group is empty, we can't calculate impact
-    if (noTakeCells.length === 0 || fishedCells.length === 0) {
+    // Filter out zero impacts (from non-protected cells)
+    const nonZeroImpacts = impacts.filter(impact => impact !== 0);
+    
+    // If there are no non-zero impacts, we can't calculate the mean
+    if (nonZeroImpacts.length === 0) {
         return null;
     }
     
-    // Calculate mean biomass for each group
-    const noTakeBiomass = noTakeCells.map(cell => cell.biomass);
-    const fishedBiomass = fishedCells.map(cell => cell.biomass);
-    
-    const meanNoTakeBiomass = calculateMean(noTakeBiomass);
-    const meanFishedBiomass = calculateMean(fishedBiomass);
-    
-    // Impact is the difference between means
-    return meanNoTakeBiomass - meanFishedBiomass;
+    // Return the mean of counterfactual impacts
+    return calculateMean(nonZeroImpacts);
 }
 
 /**

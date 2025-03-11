@@ -39,6 +39,8 @@
 - Separate calculation logic from UI logic
 - Use clear, step-by-step calculations for maintainability
 - Document the mathematical approach in comments
+- The biomass calculation uses a multiplicative formula for the no-take zone effect
+- The true impact is calculated using the mean of counterfactual impacts
 
 ### User Interface
 - Provide clear visual distinction between different cell types

@@ -25,7 +25,7 @@ The language is java script. I intend to deploy this as a github pages page. It 
 
 The app presents a grid where each cell has a specific combination of three possible habitats (see image). There is also a gradient of fishing pressure from a port located to the left of the spatial domain. Some grid cells are protected, whereas others are fished. The fish biomass in a grid cell is calculated internally based on a simple additive formula. In each grid cell fish biomass is modelled: 
 
-B = (a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F)*  d*N
+B = (a1*H1 + a2*H2 +  b1*H1*H2 + c*F)*  d*N + (a1*H1 + a2*H2 + b1*H1*H2 + c*F)
 
 where B is fish biomass, H1, H2, and H3 are the habitat types (0/1 for habitat absence or presence), and a1, a2, and a3 are the habitat-specific coefficients. b1, b2, and b3 are the interaction coefficients. c is the effect of fishing pressure, F. d is the effect of the no-take zones, N (0/1 indicator)
 F decreases from left to right in the spatial domain. The location of no-take zones is randomised and is biased towards are with low F. 

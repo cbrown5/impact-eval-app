@@ -16,7 +16,7 @@ The Marine Reserve Impact Evaluation App is an educational web application that 
 
 ### Technical Implementation
 - Implement in JavaScript for deployment as a GitHub Pages site
-- Calculate fish biomass using the formula: B = a1*H1 + a2*H2 + a2*H3 + b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F + d*N
+- Calculate fish biomass using the formula: B = (a1*H1 + a2*H2 + b1*H1*H2 + c*F) * d*N + (a1*H1 + a2*H2 + b1*H1*H2 + c*F)
 - Create a visual interface matching the provided image
 - Implement clickable grid cells for site selection with visual feedback
 - Randomize no-take zones with bias towards areas with low fishing pressure

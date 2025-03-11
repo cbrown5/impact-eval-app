@@ -98,6 +98,7 @@ The application is ready for deployment to GitHub Pages. It consists of static H
 
 ## Timeline
 
+- **2025-03-11**: Updated biomass calculation to use multiplicative no-take effect and improved true impact calculation
 - **2025-03-07**: Initial implementation completed
 - **2025-03-07**: Memory bank documentation created
 - **2025-03-07**: Added fishing village image and removed fishing gradient from legend

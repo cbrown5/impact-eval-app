@@ -10,6 +10,14 @@ The Marine Reserve Impact Evaluation App has been successfully implemented with 
 
 ## Recent Changes
 
+### Formula Update (2025-03-11)
+- Modified the biomass calculation formula to make the no-take zone effect (d) multiplicative:
+  - Changed from: `a1*H1 + a2*H2 + b1*H1*H2 + c*F + d*N`
+  - To: `(a1*H1 + a2*H2 + b1*H1*H2 + c*F) * d*N + (a1*H1 + a2*H2 + b1*H1*H2 + c*F)`
+- Updated the calculateTrueImpact function to use the mean of counterfactual impacts:
+  - Instead of comparing mean biomass between no-take and fished cells
+  - Now it calculates the counterfactual impact for each cell and returns the mean of non-zero impacts
+
 ### Initial Implementation (2025-03-07)
 - Created the basic HTML structure for the application
 - Implemented CSS styling for the grid, controls, and results panel
