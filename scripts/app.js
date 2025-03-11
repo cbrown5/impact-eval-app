@@ -5,6 +5,7 @@
 
 // DOM elements
 const siteCountInput = document.getElementById('site-count');
+const simpleModeToggle = document.getElementById('simple-mode-toggle');
 const newScenarioButton = document.getElementById('new-scenario-btn');
 const calculateButton = document.getElementById('calculate-btn');
 const resetButton = document.getElementById('reset-btn');
@@ -24,14 +25,51 @@ function initializeApp() {
     // Hide results panel initially
     resultsPanel.classList.remove('visible');
     
+    // Ensure toggle button reflects current mode
+    updateSimpleModeToggle();
+    
     // Set up event listeners
     setupEventListeners();
+}
+
+/**
+ * Update the simple mode toggle button to reflect the current mode
+ */
+function updateSimpleModeToggle() {
+    if (CONFIG.SIMPLE_MODE) {
+        simpleModeToggle.classList.add('active');
+        simpleModeToggle.textContent = 'ON';
+    } else {
+        simpleModeToggle.classList.remove('active');
+        simpleModeToggle.textContent = 'OFF';
+    }
+}
+
+/**
+ * Toggle simple mode on/off
+ */
+function toggleSimpleMode() {
+    // Toggle the mode
+    CONFIG.SIMPLE_MODE = !CONFIG.SIMPLE_MODE;
+    
+    // Update the button appearance
+    updateSimpleModeToggle();
+    
+    // Regenerate the grid with the new mode
+    GridState.initialize();
+    GridState.render();
+    
+    // Hide results
+    resultsPanel.classList.remove('visible');
 }
 
 /**
  * Set up event listeners for UI controls
  */
 function setupEventListeners() {
+    // Simple mode toggle
+    simpleModeToggle.addEventListener('click', toggleSimpleMode);
+    
     // Site count input
     siteCountInput.addEventListener('click', function() {
         // Select all text when clicked

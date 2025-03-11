@@ -49,12 +49,31 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.site-count-control {
+.site-count-control, .mode-controls {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.toggle-button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.toggle-button.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.toggle-button:not(.active) {
+    background-color: #e0e0e0;
+    color: #666;
 }
 
 input[type="number"] {
@@ -176,6 +195,37 @@ button:hover {
     margin-top: 10px;
     font-weight: bold;
     color: var(--dark-blue);
+}
+
+.fishing-gradient {
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    background: linear-gradient(to right, #ff0000, #ffffff);
+    border-radius: 4px;
+}
+
+.fishing-gradient::before {
+    content: 'High';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 2px black;
+}
+
+.fishing-gradient::after {
+    content: 'Low';
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .legend {

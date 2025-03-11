@@ -10,6 +10,17 @@ The Marine Reserve Impact Evaluation App has been successfully implemented with 
 
 ## Recent Changes
 
+### Feature Additions (2025-03-11)
+- Added a fishing pressure gradient arrow along the bottom of the grid:
+  - Visual indicator showing high (red) to low (white) fishing pressure
+  - Helps users understand the spatial pattern of fishing pressure
+- Implemented simple_mode option (enabled by default):
+  - No-take sites only have habitat 1
+  - Fished sites can have no habitat, habitat 1, habitat 2, or both habitats
+- Added a toggle button for simple_mode:
+  - Allows users to switch between simple and complex habitat modes
+  - Grid automatically regenerates when mode is changed
+
 ### Formula Update (2025-03-11)
 - Modified the biomass calculation formula to make the no-take zone effect (d) multiplicative:
   - Changed from: `a1*H1 + a2*H2 + b1*H1*H2 + c*F + d*N`

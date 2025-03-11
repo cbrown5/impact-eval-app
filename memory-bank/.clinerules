@@ -54,11 +54,21 @@
 - Document the purpose and effect of each configuration parameter
 - Use sensible defaults that create a good learning experience
 - Keep the configuration format consistent
+- Toggle-able features like simple_mode should default to the most educational setting
+
+### Feature Toggles
+- Simple mode can be toggled on/off via the UI
+- When simple mode is on, no-take sites only have habitat 1
+- When simple mode is off, habitat distribution is fully random
+- The toggle button should clearly indicate the current state
+- Toggling a feature should immediately update the display
 
 ## Project Intelligence
 
 ### Critical Implementation Paths
 - Grid generation with random habitat distribution and no-take zones
+- Simple mode implementation for controlled habitat distribution
+- Fishing pressure gradient visualization
 - Site selection and visual feedback
 - Impact calculation based on selected sites
 - Results display with survey-based and true impact
@@ -75,6 +85,8 @@
 - Implemented site selection with visual feedback
 - Added impact calculation and results display
 - Refined the UI and fixed issues with habitat display and site count input
+- Added fishing pressure gradient arrow for clearer visualization
+- Implemented simple mode with toggle functionality for controlled habitat distribution
 
 ### Tool Usage Patterns
 - Use browser developer tools for debugging and testing

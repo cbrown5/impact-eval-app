@@ -64,6 +64,7 @@ The application uses DOM event listeners to respond to user interactions:
 calculateButton.addEventListener('click', () => { /* ... */ });
 resetButton.addEventListener('click', () => { /* ... */ });
 newScenarioButton.addEventListener('click', () => { /* ... */ });
+simpleModeToggle.addEventListener('click', toggleSimpleMode);
 
 // Input change events
 siteCountInput.addEventListener('change', () => { /* ... */ });
@@ -101,7 +102,11 @@ The application runs entirely in the browser with no server-side dependencies, m
 - Simple to distribute and use in classroom settings
 
 ### Configurable Parameters
-All calculation coefficients and display settings are centralized in the CONFIG object, allowing for easy adjustment without modifying core logic.
+All calculation coefficients and display settings are centralized in the CONFIG object, allowing for easy adjustment without modifying core logic. This includes:
+
+- **Simple Mode**: A toggle-able mode that enforces specific habitat rules (no-take sites only have habitat 1)
+- **Display Settings**: Visual elements like the fishing pressure gradient arrow
+- **Calculation Coefficients**: Parameters for the biomass calculation formula
 
 ### Dynamic Grid Generation
 The grid is generated dynamically based on configuration parameters, allowing for:
@@ -133,12 +138,14 @@ The application maintains several key state elements:
 1. **Grid Cells**: Array of cell objects containing habitat data, protection status, and selection state
 2. **Selected Cells**: Subset of grid cells that have been selected by the user
 3. **Maximum Selections**: User-configurable limit on the number of survey sites
-4. **Calculation Results**: Impact measures derived from the current selection
+4. **Simple Mode**: Boolean flag controlling habitat distribution rules
+5. **Calculation Results**: Impact measures derived from the current selection
 
 State transitions are triggered by:
 - Initialization (page load)
 - User selection of grid cells
 - Changes to the maximum number of survey sites
+- Toggling simple mode on/off
 - Calculation requests
 - Reset actions
 - New scenario generation

@@ -4,6 +4,9 @@
  */
 
 const CONFIG = {
+    // Simple mode settings
+    SIMPLE_MODE: true,  // Default to simple mode
+    
     // Grid settings
     GRID_SIZE: 6,
     DEFAULT_SURVEY_SITES: 6,
@@ -45,5 +48,12 @@ const CONFIG = {
     // Display settings
     DISPLAY: {
         DECIMAL_PLACES: 2,  // Number of decimal places to display in results
+        GRADIENT_ARROW: {
+            HEIGHT: 30,  // Height of the gradient arrow in pixels
+            COLORS: {
+                HIGH: '#ff0000',  // Red for high fishing pressure
+                LOW: '#ffffff'    // White for low fishing pressure
+            }
+        }
     }
 };

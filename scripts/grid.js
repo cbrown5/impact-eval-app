@@ -38,17 +38,26 @@ const GridState = {
                 const noTakeProbability = calculateNoTakeProbability(fishingPressure);
                 const isNoTake = randomBoolean(noTakeProbability * CONFIG.NO_TAKE_ZONE.COVERAGE * 5);
                 
-                // Generate random habitat presence
+                // Create cell with basic properties
                 const cell = {
                     x,
                     y,
                     id: `cell-${x}-${y}`,
-                    H1: randomBoolean(CONFIG.HABITAT_PROBABILITY.H1),
-                    H2: randomBoolean(CONFIG.HABITAT_PROBABILITY.H2),
                     fishingPressure,
                     isNoTake,
                     isSelected: false
                 };
+                
+                // Generate habitat presence based on simple_mode setting
+                if (CONFIG.SIMPLE_MODE && isNoTake) {
+                    // In simple mode, no-take sites only have habitat 1
+                    cell.H1 = true;
+                    cell.H2 = false;
+                } else {
+                    // Fished sites (or when not in simple mode) use normal probability
+                    cell.H1 = randomBoolean(CONFIG.HABITAT_PROBABILITY.H1);
+                    cell.H2 = randomBoolean(CONFIG.HABITAT_PROBABILITY.H2);
+                }
                 
                 // Calculate biomass for this cell
                 cell.biomass = calculateBiomass(cell);
@@ -68,6 +77,13 @@ const GridState = {
             for (let i = 0; i < Math.min(5, fishedCells.length); i++) {
                 const cell = fishedCells[i];
                 cell.isNoTake = true;
+                
+                // Apply simple_mode rules to newly converted no-take cells
+                if (CONFIG.SIMPLE_MODE) {
+                    cell.H1 = true;
+                    cell.H2 = false;
+                }
+                
                 cell.biomass = calculateBiomass(cell); // Recalculate biomass
             }
         }

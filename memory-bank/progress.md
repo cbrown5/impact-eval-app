@@ -11,6 +11,9 @@ The Marine Reserve Impact Evaluation App has reached its Minimum Viable Product 
 - ✅ Random habitat distribution across grid cells
 - ✅ Biased placement of no-take zones (towards areas with low fishing pressure)
 - ✅ Fishing pressure gradient (decreasing from left to right)
+- ✅ Fishing pressure gradient arrow visualization
+- ✅ Simple mode for habitat distribution (no-take sites only have habitat 1)
+- ✅ Toggle between simple and complex habitat modes
 - ✅ Site selection via clicking on grid cells
 - ✅ Configurable number of survey sites
 - ✅ Visual feedback for selected sites
@@ -98,6 +101,7 @@ The application is ready for deployment to GitHub Pages. It consists of static H
 
 ## Timeline
 
+- **2025-03-11**: Added fishing pressure gradient arrow and simple mode toggle functionality
 - **2025-03-11**: Updated biomass calculation to use multiplicative no-take effect and improved true impact calculation
 - **2025-03-07**: Initial implementation completed
 - **2025-03-07**: Memory bank documentation created

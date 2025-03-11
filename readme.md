@@ -32,6 +32,6 @@ F decreases from left to right in the spatial domain. The location of no-take zo
 
 The user will be able to select N monitoring sites. The app will then calculate the impact measure based on the mean difference in B between monitoring data from the no-take zones and the fished zones. After the user clicks 'show answer' they will also be revealed with the true impact measure which is quantified as the mean across all sites with N==1 (ie no-take zones)
 
-(a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F)* d*N + -1*(a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F) 
+(a1*H1 + a2*H2 +  b1*H1*H2 + c*F)*  d*N 
 
 The app is designed to look like the screenshot in assets. The user can click on grids to 'select' them as potential survey sites. Once selected they change colour so its clear they are selected. There is then a 'calculate' button that calculates the survey and true impact measures. I have provided the image logos for the three habitats in the assets folder. There should also be 'reset' button that clears the selected sites. Finally there should be a 'new scenario' button that randomises the no-take zones and the fish habitat distributions.

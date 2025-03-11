@@ -15,6 +15,10 @@
                     <label for="site-count">Number of survey sites:</label>
                     <input type="number" id="site-count" min="2" max="36" value="6">
                 </div>
+                <div class="mode-controls">
+                    <label for="simple-mode-toggle">Simple Mode:</label>
+                    <button id="simple-mode-toggle" class="toggle-button active" title="Toggle between simple and complex habitat modes">ON</button>
+                </div>
                 <button id="new-scenario-btn">New Scenario</button>
             </div>
         </header>
@@ -28,6 +32,7 @@
                 <div class="selection-info">
                     <span id="selection-counter">Selected: 0/5 sites</span>
                 </div>
+                <div class="fishing-gradient" title="Fishing pressure gradient (high to low)"></div>
             </div>
 
             <div class="legend">
