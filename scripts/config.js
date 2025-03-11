@@ -19,7 +19,7 @@ const CONFIG = {
         
         // Management effects
         c: -10,  // Fishing pressure effect (negative impact)
-        d: 40    // No-take zone effect (positive impact)
+        d: 1.5    // No-take zone effect (positive impact)
     },
     
     // Probability settings

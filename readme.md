@@ -25,13 +25,13 @@ The language is java script. I intend to deploy this as a github pages page. It 
 
 The app presents a grid where each cell has a specific combination of three possible habitats (see image). There is also a gradient of fishing pressure from a port located to the left of the spatial domain. Some grid cells are protected, whereas others are fished. The fish biomass in a grid cell is calculated internally based on a simple additive formula. In each grid cell fish biomass is modelled: 
 
-B = a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F + d*N
+B = (a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F)*  d*N
 
 where B is fish biomass, H1, H2, and H3 are the habitat types (0/1 for habitat absence or presence), and a1, a2, and a3 are the habitat-specific coefficients. b1, b2, and b3 are the interaction coefficients. c is the effect of fishing pressure, F. d is the effect of the no-take zones, N (0/1 indicator)
 F decreases from left to right in the spatial domain. The location of no-take zones is randomised and is biased towards are with low F. 
 
 The user will be able to select N monitoring sites. The app will then calculate the impact measure based on the mean difference in B between monitoring data from the no-take zones and the fished zones. After the user clicks 'show answer' they will also be revealed with the true impact measure which is quantified as the mean across all sites with N==1 (ie no-take zones)
 
-(a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F + d*N) + -1*(a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F) 
+(a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F)* d*N + -1*(a1*H1 + a2*H2 + a2*H3 +  b1*H1*H2 + b2*H2*H3 + b3*H1*H3 + c*F) 
 
 The app is designed to look like the screenshot in assets. The user can click on grids to 'select' them as potential survey sites. Once selected they change colour so its clear they are selected. There is then a 'calculate' button that calculates the survey and true impact measures. I have provided the image logos for the three habitats in the assets folder. There should also be 'reset' button that clears the selected sites. Finally there should be a 'new scenario' button that randomises the no-take zones and the fish habitat distributions.
