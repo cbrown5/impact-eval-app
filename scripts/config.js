@@ -21,7 +21,7 @@ const CONFIG = {
         b1: 20,  // H1*H2 interaction (coral1 * coral2)
         
         // Management effects
-        c: -10,  // Fishing pressure effect (negative impact)
+        c: -50,  // Fishing pressure effect (negative impact)
         d: 1.5    // No-take zone effect (positive impact)
     },
     
