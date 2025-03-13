@@ -4,7 +4,7 @@
     --primary-color: #3498db;
     --secondary-color: #2ecc71;
     --accent-color: #e74c3c;
-    --light-blue: #d6eaf8;
+    --light-blue: #d0e6fd;
     --dark-blue: #2980b9;
     --grid-cell-size: 60px;
     --no-take-color: rgb(191, 226, 188);
@@ -184,8 +184,8 @@ button:hover {
 }
 
 .habitat-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     object-fit: contain;
     display: block;
     margin: 1px;
