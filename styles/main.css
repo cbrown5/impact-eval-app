@@ -8,6 +8,7 @@
     --dark-blue: #2980b9;
     --grid-cell-size: 60px;
     --no-take-color: rgb(191, 226, 188);
+    --no-take-border: black;
     --selected-color: rgba(255, 255, 0, 0.5);
 }
 
@@ -164,6 +165,7 @@ button:hover {
 
 .grid-cell.no-take {
     background-color: var(--no-take-color);
+    border: 3px solid var(--no-take-border);
 }
 
 .grid-cell.selected {
@@ -253,7 +255,7 @@ button:hover {
 
 .legend-color.no-take {
     background-color: var(--no-take-color);
-    border: 1px solid #2ecc71;
+    border: 3px solid var(--no-take-border);
 }
 
 .legend-color.selected {
